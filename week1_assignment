@@ -36,4 +36,19 @@ with open("school_prompt.txt", "r") as school:
     We create a seperate list of strings for each line by stripping white space and splitting each line, but then only take the third element of this list
     These third elements (index 2) are then stored in the list three 
 ###
-    
+
+#6) Create a list called emotions that contains the first word of every line in emotion_words.txt.
+with open("emotion_words.txt", "r") as emotion:
+    emotions = [emo.strip().split()[0] for emo in emotion.readlines()]
+
+#7) Assign the first 33 characters from the textfile, travel_plans.txt to the variable first_chars.
+first_chars = open("travel_plans.txt", "r").read()[:33]
+
+#8) 
+
+with open("school_prompt.txt", "r") as school:
+    p_words = list()
+    for word in school.read().split(): #iterator = word and iterable is a list of all words of the string created with read() from object school
+       if "p" in word: #check if p is in a string elemeent 
+           p_words.append(word) #if TRUE append the list p.words with this string
+    print(p_words)
