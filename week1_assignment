@@ -19,3 +19,21 @@ with open("school_prompt.txt", "r") as school:
 
 with open("school_prompt.txt", "r") as school:
     beginning_chars = school.read()[:30]
+
+#5) Using the file school_prompt.txt, assign the third word of every line to a list called three.
+# Super Short Solution
+with open("school_prompt.txt", "r") as school:
+    three = [i.strip().split()[2] for i in school.readlines()]
+    
+# More Understandable
+with open("school_prompt.txt", "r") as school:
+    lines = school.readlines()
+    three = [line.strip().split()[2] for line in lines]
+    
+### Explanation:
+    Create List "lines" where each element of "lines" is a string, where we want the third word of each
+    We iterate through our list lines (iterable) with  the iterator line
+    We create a seperate list of strings for each line by stripping white space and splitting each line, but then only take the third element of this list
+    These third elements (index 2) are then stored in the list three 
+###
+    
